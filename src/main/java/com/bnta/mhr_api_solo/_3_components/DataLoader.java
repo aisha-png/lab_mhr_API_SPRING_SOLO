@@ -1,5 +1,6 @@
 package com.bnta.mhr_api_solo._3_components;
 
+import com.bnta.mhr_api_solo._1_models.Hunter;
 import com.bnta.mhr_api_solo._2_repositories.ArenaRepository;
 import com.bnta.mhr_api_solo._2_repositories.HunterRepository;
 import com.bnta.mhr_api_solo._2_repositories.QuestRepository;
@@ -21,10 +22,10 @@ public class DataLoader implements ApplicationRunner {
     @Autowired
     ArenaRepository arenaRepository;
 
-
     @Override
     public void run(ApplicationArguments args) throws Exception {
-
+//        TODO: ADD SOME HUNTERS:
+//        Hunter hunter1 = new Hunter("")
 
     }
 }

@@ -13,7 +13,7 @@ public class Hunter {
     private Long id;
 
     @Column
-    private String name;
+    private String userName;
 
     @Column
     private String weapon;
@@ -28,8 +28,8 @@ public class Hunter {
     protected Hunter (){}
 
 //    CONSTRUCTOR:
-    public Hunter(String name, String weapon, String buddyType) {
-        this.name = name;
+    public Hunter(String userName, String weapon, String buddyType) {
+        this.userName = userName;
         this.weapon = weapon;
         this.buddyType = buddyType;
         this.quests = new ArrayList<>();
@@ -40,12 +40,12 @@ public class Hunter {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getWeapon() {
@@ -84,7 +84,7 @@ public class Hunter {
     public String toString() {
         return "Hunter{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
+                ", name='" + userName + '\'' +
                 ", weapon='" + weapon + '\'' +
                 ", buddyType='" + buddyType + '\'' +
                 ", quests=" + quests +
