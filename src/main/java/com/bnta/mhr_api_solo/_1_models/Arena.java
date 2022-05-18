@@ -3,6 +3,7 @@ package com.bnta.mhr_api_solo._1_models;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -28,10 +29,10 @@ public class Arena {
 
 //    CONSTRUCTOR:
 
-    public Arena(String name, String monster, List<Quest> quests) {
+    public Arena(String name, String monster) {
         this.name = name;
         this.monster = monster;
-        this.quests = quests;
+        this.quests = new ArrayList<>();
     }
 
 //    GETTERS & SETTERS:
