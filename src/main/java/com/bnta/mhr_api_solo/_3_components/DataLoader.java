@@ -29,6 +29,7 @@ public class DataLoader implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
+
 //        TODO: ADD SOME HUNTERS:
         Hunter hunter1 = new Hunter("Mad Dog", "Long Sword", "PALAMUTE");
         Hunter hunter2 = new Hunter("Scar", "Dual Blade", "PALAMUTE");
@@ -45,11 +46,11 @@ public class DataLoader implements ApplicationRunner {
 
 
 //        TODO: ADD SOME ARENAS:
-        Arena arena1 = new Arena("Shrine Ruins", "Zinogre");
-        Arena arena2 = new Arena("Frost Islands", "Rathian");
-        Arena arena3 = new Arena("Lava Caverns", "Magnamalo");
-        Arena arena4 = new Arena("Flooded Forest", "Almudron");
-        Arena arena5 = new Arena("Sandy Plains", "Apex Rathalos");
+        Arena arena1 = new Arena("Shrine Ruins");
+        Arena arena2 = new Arena("Frost Islands");
+        Arena arena3 = new Arena("Lava Caverns");
+        Arena arena4 = new Arena("Flooded Forest");
+        Arena arena5 = new Arena("Sandy Plains");
         arenaRepository.saveAll(Arrays.asList(arena1, arena2, arena3, arena4, arena5));
 
 //        TODO: ADD SOME QUESTS:

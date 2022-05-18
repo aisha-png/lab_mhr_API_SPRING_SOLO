@@ -17,9 +17,6 @@ public class Arena {
     @Column
     private String location;
 
-    @Column(name = "large_monster")
-    private String monster;
-
     @OneToMany(mappedBy = "arena")
 //    @JsonIgnoreProperties({"arenas"})
     private List<Quest> quests;
@@ -29,9 +26,8 @@ public class Arena {
 
 //    CONSTRUCTOR:
 
-    public Arena(String location, String monster) {
+    public Arena(String location) {
         this.location = location;
-        this.monster = monster;
         this.quests = new ArrayList<>();
     }
 
@@ -49,14 +45,6 @@ public class Arena {
         this.location = location;
     }
 
-    public String getMonster() {
-        return monster;
-    }
-
-    public void setMonster(String monster) {
-        this.monster = monster;
-    }
-
     public List<Quest> getQuests() {
         return quests;
     }
@@ -70,7 +58,6 @@ public class Arena {
         return "Arena{" +
                 "id=" + id +
                 ", location='" + location + '\'' +
-                ", monster='" + monster + '\'' +
                 ", quests=" + quests +
                 '}';
     }

@@ -21,7 +21,7 @@ public class Quest {
     @Column
     private Duration completedIn;
 
-    @Column
+    @Column(name = "large_monster")
     private String monster;
 
     @ManyToOne
