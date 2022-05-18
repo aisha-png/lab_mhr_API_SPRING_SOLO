@@ -33,8 +33,22 @@ public class HunterController {
     @PostMapping
     public ResponseEntity<Hunter> createHunter(@RequestBody Hunter newHunter){
         hunterRepository.save(newHunter);
-        return new ResponseEntity<>(newHunter, HttpStatus.OK);
+        return new ResponseEntity<>(newHunter, HttpStatus.CREATED);
     }
 
+//    TODO: DELETE
+//    @DeleteMapping("/{id}")
+//    public ResponseEntity<Optional<Hunter>> removeHunter(@PathVariable("id") Long id){
+//        return new ResponseEntity<>(hunterRepository.deleteAllById(id), HttpStatus.OK);
+//    }
+//
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Long> removeHunter(@PathVariable("id") Long id){
+        hunterRepository.deleteById(id);
+        return new ResponseEntity<>(id, HttpStatus.OK);
+    }
+//    public void removeHunter(@PathVariable("id") Long id){
+//        hunterRepository.deleteAllById(id);
+//    }
 
 }
