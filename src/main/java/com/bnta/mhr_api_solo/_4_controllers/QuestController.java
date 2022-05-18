@@ -1,6 +1,5 @@
 package com.bnta.mhr_api_solo._4_controllers;
 
-import com.bnta.mhr_api_solo._1_models.Hunter;
 import com.bnta.mhr_api_solo._1_models.Quest;
 import com.bnta.mhr_api_solo._2_repositories.QuestRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,6 +34,13 @@ public class QuestController {
     public ResponseEntity<Quest> createQuest(@RequestBody Quest newQuest){
         questRepository.save(newQuest);
         return new ResponseEntity<>(newQuest, HttpStatus.CREATED);
+    }
+
+//    TODO: DELETE
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Long> removeQuest(@PathVariable Long id){
+        questRepository.deleteById(id);
+        return new ResponseEntity<>(id, HttpStatus.OK);
     }
 
 
