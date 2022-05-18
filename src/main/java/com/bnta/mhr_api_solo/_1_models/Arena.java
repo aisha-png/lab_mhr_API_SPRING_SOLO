@@ -17,7 +17,7 @@ public class Arena {
     @Column
     private String location;
 
-    @Column
+    @Column(name = "large_monster")
     private String monster;
 
     @OneToMany(mappedBy = "arena")

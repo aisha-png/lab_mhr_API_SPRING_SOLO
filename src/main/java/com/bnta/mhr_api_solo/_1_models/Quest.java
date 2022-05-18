@@ -16,7 +16,13 @@ public class Quest {
     private String title;
 
     @Column
+    private int level;
+
+    @Column
     private Duration completedIn;
+
+    @Column
+    private String monster;
 
     @ManyToOne
     @JoinColumn(name = "arena_id")
@@ -34,9 +40,11 @@ public class Quest {
 
 //    CONSTRUCTOR:
 
-    public Quest(String title, Duration completedIn, Arena arena, List<Hunter> hunters) {
+    public Quest(String title, int level, Duration completedIn, String monster, Arena arena, List<Hunter> hunters) {
         this.title = title;
+        this.level = level;
         this.completedIn = completedIn;
+        this.monster = monster;
         this.arena = arena;
         this.hunters = hunters;
     }
@@ -55,12 +63,28 @@ public class Quest {
         this.title = title;
     }
 
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
     public Duration getCompletedIn() {
         return completedIn;
     }
 
     public void setCompletedIn(Duration completedIn) {
         this.completedIn = completedIn;
+    }
+
+    public String getMonster() {
+        return monster;
+    }
+
+    public void setMonster(String monster) {
+        this.monster = monster;
     }
 
     public Arena getArena() {
@@ -84,7 +108,9 @@ public class Quest {
         return "Quest{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
+                ", level=" + level +
                 ", completedIn=" + completedIn +
+                ", monster='" + monster + '\'' +
                 ", arena=" + arena +
                 ", hunters=" + hunters +
                 '}';
