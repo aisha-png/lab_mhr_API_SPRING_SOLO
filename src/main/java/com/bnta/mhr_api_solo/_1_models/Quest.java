@@ -1,17 +1,29 @@
 package com.bnta.mhr_api_solo._1_models;
 
+import javax.persistence.*;
 import java.time.Duration;
 import java.util.List;
 
+@Entity
+@Table(name = "quests")
 public class Quest {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column
     private String title;
 
+    @Column
     private Duration completedIn;
 
+    @Column
     private String monster;
+
+    @ManyToOne
+    @JoinColumn(name = "arena_id")
+    private Arena arena;
 
     private List<Hunter> hunters;
 
@@ -20,10 +32,11 @@ public class Quest {
 
 //    CONSTRUCTOR:
 
-    public Quest(String title, Duration completedIn, String monster, List<Hunter> hunters) {
+    public Quest(String title, Duration completedIn, String monster, Arena arena, List<Hunter> hunters) {
         this.title = title;
         this.completedIn = completedIn;
         this.monster = monster;
+        this.arena = arena;
         this.hunters = hunters;
     }
 
@@ -55,6 +68,14 @@ public class Quest {
 
     public void setMonster(String monster) {
         this.monster = monster;
+    }
+
+    public Arena getArena() {
+        return arena;
+    }
+
+    public void setArena(Arena arena) {
+        this.arena = arena;
     }
 
     public List<Hunter> getHunters() {
