@@ -1,15 +1,26 @@
 package com.bnta.mhr_api_solo._1_models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import javax.persistence.*;
 import java.util.List;
 
+@Entity
+@Table(name = "arenas")
 public class Arena {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column
     private String name;
 
+    @Column
     private String monster;
 
+    @OneToMany(mappedBy = "arena")
+//    @JsonIgnoreProperties({"arenas"})
     private List<Quest> quests;
 
 //    DEFAULT CONSTRUCTOR:
@@ -24,7 +35,6 @@ public class Arena {
     }
 
 //    GETTERS & SETTERS:
-
 
     public Long getId() {
         return id;
