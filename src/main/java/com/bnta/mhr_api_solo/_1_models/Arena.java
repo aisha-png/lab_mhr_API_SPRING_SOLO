@@ -15,7 +15,7 @@ public class Arena {
     private Long id;
 
     @Column
-    private String name;
+    private String location;
 
     @Column
     private String monster;
@@ -29,8 +29,8 @@ public class Arena {
 
 //    CONSTRUCTOR:
 
-    public Arena(String name, String monster) {
-        this.name = name;
+    public Arena(String location, String monster) {
+        this.location = location;
         this.monster = monster;
         this.quests = new ArrayList<>();
     }
@@ -41,12 +41,12 @@ public class Arena {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public String getLocation() {
+        return location;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     public String getMonster() {
@@ -69,7 +69,7 @@ public class Arena {
     public String toString() {
         return "Arena{" +
                 "id=" + id +
-                ", name='" + name + '\'' +
+                ", location='" + location + '\'' +
                 ", monster='" + monster + '\'' +
                 ", quests=" + quests +
                 '}';
