@@ -1,5 +1,7 @@
 package com.bnta.mhr_api_solo._1_models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.time.Duration;
 import java.util.List;
@@ -26,13 +28,14 @@ public class Quest {
 
     @ManyToOne
     @JoinColumn(name = "arena_id")
+    @JsonIgnoreProperties({"quests"})
     private Arena arena;
 
     @ManyToMany
     @JoinTable(name = "quests_hunters",
             joinColumns = {@JoinColumn(name = "quest_id", nullable = false)},
             inverseJoinColumns = {@JoinColumn(name = "hunter_id", nullable = false)})
-//    @JsonIgnoreProperties({"quests"})
+    @JsonIgnoreProperties({"quests"})
     private List<Hunter> hunters;
 
 //    DEFAULT CONSTRUCTOR:

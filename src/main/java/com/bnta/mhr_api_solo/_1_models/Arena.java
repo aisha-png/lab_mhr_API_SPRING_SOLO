@@ -18,7 +18,7 @@ public class Arena {
     private String location;
 
     @OneToMany(mappedBy = "arena")
-//    @JsonIgnoreProperties({"arenas"})
+    @JsonIgnoreProperties({"arenas"})
     private List<Quest> quests;
 
 //    DEFAULT CONSTRUCTOR:

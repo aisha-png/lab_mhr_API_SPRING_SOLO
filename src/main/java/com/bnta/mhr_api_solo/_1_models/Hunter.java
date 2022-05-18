@@ -1,5 +1,7 @@
 package com.bnta.mhr_api_solo._1_models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,6 +24,7 @@ public class Hunter {
     private String buddyType;
 
     @ManyToMany(mappedBy = "hunters")
+    @JsonIgnoreProperties({"hunters"})
     private List<Quest> quests;
 
 //    DEFAULT CONSTRUCTOR:
