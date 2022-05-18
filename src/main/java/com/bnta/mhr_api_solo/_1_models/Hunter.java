@@ -36,8 +36,6 @@ public class Hunter {
     }
 
 //    GETTERS & SETTERS:
-
-
     public Long getId() {
         return id;
     }
