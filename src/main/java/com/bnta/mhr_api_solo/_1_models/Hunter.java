@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 @Entity
 @Table(name = "hunters")
@@ -36,6 +37,11 @@ public class Hunter {
         this.weapon = weapon;
         this.buddyType = buddyType;
         this.quests = new ArrayList<>();
+    }
+//    ENUM METHOD:
+    public BuddySkill getBuddySkill(){
+        int buddySkill = new Random().nextInt(BuddySkill.values().length);
+        return BuddySkill.values()[buddySkill];
     }
 
 //    GETTERS & SETTERS:
