@@ -23,7 +23,44 @@ public class Arena {
         this.quests = quests;
     }
 
+//    GETTERS & SETTERS:
 
 
+    public Long getId() {
+        return id;
+    }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getMonster() {
+        return monster;
+    }
+
+    public void setMonster(String monster) {
+        this.monster = monster;
+    }
+
+    public List<Quest> getQuests() {
+        return quests;
+    }
+
+    public void setQuests(List<Quest> quests) {
+        this.quests = quests;
+    }
+
+    @Override
+    public String toString() {
+        return "Arena{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", monster='" + monster + '\'' +
+                ", quests=" + quests +
+                '}';
+    }
 }
