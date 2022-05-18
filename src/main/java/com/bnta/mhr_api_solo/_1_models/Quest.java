@@ -25,6 +25,11 @@ public class Quest {
     @JoinColumn(name = "arena_id")
     private Arena arena;
 
+    @ManyToMany
+    @JoinTable(name = "quests_hunters",
+            joinColumns = {@JoinColumn(name = "quest_id", nullable = false)},
+            inverseJoinColumns = {@JoinColumn(name = "hunter_id", nullable = false)})
+//    @JsonIgnoreProperties({"quests"})
     private List<Hunter> hunters;
 
 //    DEFAULT CONSTRUCTOR:
@@ -84,5 +89,17 @@ public class Quest {
 
     public void setHunters(List<Hunter> hunters) {
         this.hunters = hunters;
+    }
+
+    @Override
+    public String toString() {
+        return "Quest{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", completedIn=" + completedIn +
+                ", monster='" + monster + '\'' +
+                ", arena=" + arena +
+                ", hunters=" + hunters +
+                '}';
     }
 }
