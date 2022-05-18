@@ -41,7 +41,6 @@ public class HunterController {
 //    public ResponseEntity<Optional<Hunter>> removeHunter(@PathVariable("id") Long id){
 //        return new ResponseEntity<>(hunterRepository.deleteAllById(id), HttpStatus.OK);
 //    }
-//
     @DeleteMapping("/{id}")
     public ResponseEntity<Long> removeHunter(@PathVariable("id") Long id){
         hunterRepository.deleteById(id);
