@@ -40,6 +40,6 @@ public class ArenaController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Long> removeArena(@PathVariable Long id){
         arenaRepository.deleteById(id);
-        return new ResponseEntity<>(id, HttpStatus.OK);
+        return new ResponseEntity<>(id, HttpStatus.NOT_FOUND);
     }
 }

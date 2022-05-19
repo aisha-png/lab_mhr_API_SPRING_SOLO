@@ -18,13 +18,22 @@ public class HunterController {
     HunterRepository hunterRepository;
 
 //    TODO: INDEX
-    @GetMapping //localhost:8080/hunters
-    public ResponseEntity<List<Hunter>> getHunters(){
+//    @GetMapping //localhost:8080/hunters
+//    public ResponseEntity<List<Hunter>> getHunters(){
+//        return new ResponseEntity<>(hunterRepository.findAll(), HttpStatus.OK);
+//    }
+
+    @GetMapping //localhost:8080/hunters?username=mad_dog
+    public ResponseEntity<List<Hunter>> getHunterUserName(
+            @RequestParam(required = false, name = "username") String userName){
+        if (userName != null){
+            return new ResponseEntity<>(hunterRepository.findHunterByUserName(userName), HttpStatus.OK);
+        }
         return new ResponseEntity<>(hunterRepository.findAll(), HttpStatus.OK);
     }
 
 //    TODO: SHOW ROUTE
-    @GetMapping("/{id}")//localhost:8080/hunters/10
+    @GetMapping(value = "/{id}")//localhost:8080/hunters/10
     public ResponseEntity<Optional<Hunter>> getHunter(@PathVariable Long id){
         return new ResponseEntity<>(hunterRepository.findById(id), HttpStatus.OK);
     }
@@ -37,17 +46,10 @@ public class HunterController {
     }
 
 //    TODO: DELETE
-//    @DeleteMapping("/{id}")
-//    public ResponseEntity<Optional<Hunter>> removeHunter(@PathVariable("id") Long id){
-//        return new ResponseEntity<>(hunterRepository.deleteAllById(id), HttpStatus.OK);
-//    }
-    @DeleteMapping("/{id}")
+    @DeleteMapping(value = "/{id}")
     public ResponseEntity<Long> removeHunter(@PathVariable("id") Long id){
         hunterRepository.deleteById(id);
         return new ResponseEntity<>(id, HttpStatus.OK);
     }
-//    public void removeHunter(@PathVariable("id") Long id){
-//        hunterRepository.deleteAllById(id);
-//    }
 
 }
