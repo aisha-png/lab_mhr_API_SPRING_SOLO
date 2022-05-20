@@ -56,35 +56,35 @@ public class DataLoader implements ApplicationRunner {
 
 
 //        TODO: ADD SOME QUESTS:
-        Quest quest1 = new Quest("Blazin' Soul of a Warrior", 7, Duration.ofMinutes(26), "magnamalo",arena3,
+        Quest quest1 = new Quest("blazin_soul_of_a_warrior", 7, Duration.ofMinutes(26), "magnamalo",arena3,
                 Arrays.asList(hunter1, hunter3, hunter4, hunter7));
-        Quest quest2 = new Quest("Frost Bites", 6, Duration.ofMinutes(23), "lagombi", arena2,
+        Quest quest2 = new Quest("frost_bites", 6, Duration.ofMinutes(23), "lagombi", arena2,
                 Arrays.asList(hunter2, hunter5, hunter6, hunter8));
-        Quest quest3 = new Quest("Apex Rathalos Emergency", 7, Duration.ofMinutes(34), "apex_rathalos", arena5,
+        Quest quest3 = new Quest("apex_rathalos_emergency", 7, Duration.ofMinutes(34), "apex_rathalos", arena5,
                 Arrays.asList(hunter9, hunter10, hunter4, hunter7));
-        Quest quest4 = new Quest("Almundron: Fashion Victim", 4, Duration.ofMinutes(29), "almundron", arena3,
+        Quest quest4 = new Quest("almundron_fashion_victim", 4, Duration.ofMinutes(29), "almundron", arena3,
                 Arrays.asList(hunter1, hunter5, hunter6, hunter10));
-        Quest quest5 = new Quest("Flooded in the Flooded Forest", 7, Duration.ofMinutes(32), "chameleos", arena4,
+        Quest quest5 = new Quest("flooded_in_the_flooded_forest", 7, Duration.ofMinutes(32), "chameleos", arena4,
                 Arrays.asList(hunter8, hunter6, hunter9, hunter1));
-        Quest quest6 = new Quest("SF: Ultimate Promotion Exam", 7, Duration.ofMinutes(35), "rajang", arena1,
+        Quest quest6 = new Quest("sf_ultimate_promotion_exam", 7, Duration.ofMinutes(35), "rajang", arena1,
                 Arrays.asList(hunter2, hunter7, hunter3, hunter5));
-        Quest quest7 = new Quest("Boomy Dango", 6, Duration.ofMinutes(17), "bazelguese",arena2,
+        Quest quest7 = new Quest("boomy_dango", 6, Duration.ofMinutes(17), "bazelguese",arena2,
                 Arrays.asList(hunter3, hunter8, hunter2, hunter6));
-        Quest quest8 = new Quest("Wrestling the Pain", 5, Duration.ofMinutes(23), "arzuros", arena4,
+        Quest quest8 = new Quest("wrestling_the_pain", 5, Duration.ofMinutes(23), "arzuros", arena4,
                 Arrays.asList(hunter4, hunter9, hunter5, hunter9));
-        Quest quest9 = new Quest("Dancing Parasol, Snowy Breeze", 7, Duration.ofMinutes(23), "aknosom", arena2,
+        Quest quest9 = new Quest("dancing_parasol_snowy_breeze", 7, Duration.ofMinutes(23), "aknosom", arena2,
                 Arrays.asList(hunter5, hunter10, hunter4, hunter2));
-        Quest quest10 = new Quest("Kunai Ask You a Favor", 7, Duration.ofMinutes(23), "diablos", arena5,
+        Quest quest10 = new Quest("kunai_ask_you_a_favor", 7, Duration.ofMinutes(23), "diablos", arena5,
                 Arrays.asList(hunter6, hunter1, hunter10, hunter3));
-        Quest quest11 = new Quest("Sharpening Amber Fangs", 6, Duration.ofMinutes(16), "barioth", arena2,
+        Quest quest11 = new Quest("sharpening_amber_fangs", 6, Duration.ofMinutes(16), "barioth", arena2,
                 Arrays.asList(hunter7, hunter1, hunter5, hunter2));
-        Quest quest12 = new Quest("A Bewitching Dance", 6, Duration.ofMinutes(15), "mizutsune", arena1,
+        Quest quest12 = new Quest("a_bewitching_dance", 6, Duration.ofMinutes(15), "mizutsune", arena1,
                 Arrays.asList(hunter6, hunter9, hunter10, hunter3));
-        Quest quest13 = new Quest("Clad in Hellfire", 7, Duration.ofMinutes(22), "magnamalo", arena1,
+        Quest quest13 = new Quest("clad_in_hellfire", 7, Duration.ofMinutes(22), "magnamalo", arena1,
                 Arrays.asList(hunter4, hunter8, hunter3, hunter5));
-        Quest quest14 = new Quest("Evil Afoot", 7, Duration.ofMinutes(23), "rajang", arena3,
+        Quest quest14 = new Quest("evil_afoot", 7, Duration.ofMinutes(23), "rajang", arena3,
                 Arrays.asList(hunter3, hunter4, hunter10, hunter2));
-        Quest specialQuest = new Quest("Serpent Goddess of Thunder", 7, Duration.ofMinutes(39), "serpent_narwa", specialArena,
+        Quest specialQuest = new Quest("serpent_goddess_of_thunder", 7, Duration.ofMinutes(39), "serpent_narwa", specialArena,
                 Arrays.asList(hunter10, hunter5, hunter7, hunter6));
         questRepository.saveAll(
                 Arrays.asList(quest1, quest2, quest3, quest4, quest5, quest6, quest7,

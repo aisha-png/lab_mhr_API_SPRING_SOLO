@@ -1,5 +1,6 @@
 package com.bnta.mhr_api_solo;
 
+import com.bnta.mhr_api_solo._1_models.Arena;
 import com.bnta.mhr_api_solo._1_models.Hunter;
 import com.bnta.mhr_api_solo._1_models.Quest;
 import com.bnta.mhr_api_solo._2_repositories.ArenaRepository;
@@ -23,6 +24,11 @@ class MhrApiSoloApplicationTests {
 	@Autowired
 	HunterRepository hunterRepository;
 
+	@Autowired
+	QuestRepository questRepository;
+
+	@Autowired
+	ArenaRepository arenaRepository;
 
 //	--------------------------------------------TESTS FOR HUNTER--------------------------------------------------------
 	@Test
@@ -49,6 +55,23 @@ class MhrApiSoloApplicationTests {
 //		List<Hunter> hunters = hunterRepository.findAll();
 //		assertThat(hunters.size()).isEqualTo(9);
 //	}
+
+	@Test
+	public void canFindQuestByTitle(){
+		List<Quest> found = questRepository.findQuestByTitle("boomy_dango");
+		assertThat(found.size()).isEqualTo(1);
+	}
+
+	@Test
+	public void canFindQuestByMonster(){
+		List<Quest> found = questRepository.findQuestByMonster("magnamalo");
+		assertThat(found.size()).isEqualTo(2);
+	}
+	@Test
+	public void canGetArenaByLocation(){
+		List<Arena> found = arenaRepository.findArenaByLocation("shrine_ruins");
+		assertThat(found.size()).isEqualTo(1);
+	}
 
 
 

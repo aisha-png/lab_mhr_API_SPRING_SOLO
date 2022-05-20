@@ -1,6 +1,7 @@
 package com.bnta.mhr_api_solo._4_controllers;
 
 import com.bnta.mhr_api_solo._1_models.Arena;
+import com.bnta.mhr_api_solo._1_models.Quest;
 import com.bnta.mhr_api_solo._2_repositories.ArenaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,8 +19,16 @@ public class ArenaController {
     ArenaRepository arenaRepository;
 
 //    TODO: INDEX
-    @GetMapping//localhost:8080/arenas
-    public ResponseEntity<List<Arena>> getArenas(){
+//    @GetMapping//localhost:8080/arenas
+//    public ResponseEntity<List<Arena>> getArenas(){
+//        return new ResponseEntity<>(arenaRepository.findAll(), HttpStatus.OK);
+//    }
+    @GetMapping
+    public ResponseEntity<List<Arena>> getArenaByLocation(
+            @RequestParam(required = false, name = "location") String location){
+        if(location != null) {
+            return new ResponseEntity<>(arenaRepository.findArenaByLocation(location), HttpStatus.OK);
+        }
         return new ResponseEntity<>(arenaRepository.findAll(), HttpStatus.OK);
     }
 
