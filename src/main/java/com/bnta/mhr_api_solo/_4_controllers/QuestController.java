@@ -24,14 +24,6 @@ public class QuestController {
 //    public ResponseEntity<List<Quest>> getQuests(){
 //        return new ResponseEntity<>(questRepository.findAll(), HttpStatus.OK);
 //    }
-//    @GetMapping
-//    public ResponseEntity<List<Quest>> getQuestTitle(
-//            @RequestParam(required = false, name = "title") String title){
-//        if(title != null) {
-//            return new ResponseEntity<>(questRepository.findQuestByTitle(title), HttpStatus.OK);
-//        }
-//        return new ResponseEntity<>(questRepository.findAll(), HttpStatus.OK);
-//    }
 
     @GetMapping
     public ResponseEntity<List<Quest>> getQuestAndFilter(

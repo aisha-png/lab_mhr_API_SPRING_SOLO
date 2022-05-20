@@ -23,11 +23,27 @@ public class HunterController {
 //        return new ResponseEntity<>(hunterRepository.findAll(), HttpStatus.OK);
 //    }
 
+//    @GetMapping //localhost:8080/hunters?username=mad_dog
+//    public ResponseEntity<List<Hunter>> getHunterUserName(
+//            @RequestParam(required = false, name = "username") String userName){
+//        if (userName != null){
+//            return new ResponseEntity<>(hunterRepository.findHunterByUserName(userName), HttpStatus.OK);
+//        }
+//        return new ResponseEntity<>(hunterRepository.findAll(), HttpStatus.OK);
+//    }
     @GetMapping //localhost:8080/hunters?username=mad_dog
     public ResponseEntity<List<Hunter>> getHunterUserName(
-            @RequestParam(required = false, name = "username") String userName){
+            @RequestParam(required = false, name = "username") String userName,
+            @RequestParam(required = false, name = "weapon") String weapon,
+            @RequestParam(required = false, name = "buddytype") String buddyType){
         if (userName != null){
             return new ResponseEntity<>(hunterRepository.findHunterByUserName(userName), HttpStatus.OK);
+        }
+        if (weapon != null){
+            return new ResponseEntity<>(hunterRepository.findHunterByWeapon(weapon), HttpStatus.OK);
+        }
+        if (buddyType != null){
+            return new ResponseEntity<>(hunterRepository.findHuntersByBuddyType(buddyType), HttpStatus.OK);
         }
         return new ResponseEntity<>(hunterRepository.findAll(), HttpStatus.OK);
     }

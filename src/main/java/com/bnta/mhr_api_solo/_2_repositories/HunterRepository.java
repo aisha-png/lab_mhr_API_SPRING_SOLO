@@ -10,5 +10,6 @@ public interface HunterRepository extends JpaRepository<Hunter, Long> {
     List<Hunter> findHunterByUserName(String userName);
     List<Hunter> findHuntersByBuddyType(String buddyType);
     List<Hunter> findHunterByWeapon(String weapon);
+//    List<Hunter> findTotalHunterCount();
 
 }
